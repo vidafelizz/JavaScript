@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>gugudan3</title>
+<script type="text/javascript">
+function enter() {
+	console.log(window.event.keyCode);
+	if(window.event.keyCode == 13) { // 13은 키보드의 엔터키를 의미
+		gugu();
+	}
+}
+
+function gugu() {
+	var dan = document.getElementById("dan").value;
+	var str = "";
+	for(var i=1; i<=9; i++) {
+		str += dan + "x" + i + "=" + dan*i + "<br>";
+	}
+	// id가 result인 태그에 내부영역<div>에 결과를 출력(html로 출력)
+	document.getElementById("result").innerHTML = str;
+}
+
+</script>
+
+
+<style type="text/css">
+#result {
+  background: aqua;
+  width: 150px;
+}
+
+
+</style>
+
+</head>
+<body>
+단을 입력하세요.
+<!-- onkeyup: 키보드를 눌렀다가 떼는 순간(키가 올라갈 때) 이벤트 작동 -->
+<input type="text" id="dan" value="2" size="5" onkeyup="enter()">
+<input type="button" onclick="gugu()" value="확인">
+<div id="result">innerHTML영역</div>
+
+</body>
+</html>
