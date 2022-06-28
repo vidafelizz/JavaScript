@@ -4,20 +4,19 @@
 <meta charset="UTF-8">
 <title>Math1</title>
 <script type="text/javascript">
-function calc(type) {
-	var x = Number(document.getElementById("input1").value);
-	var y = Number(document.getElementById("input2").value);
-	var c = 0;
-	
+function calc(type){
+	var x=Number(document.getElementById("input1").value);
+	var y=Number(document.getElementById("input2").value);
+	var c;
 	switch (type) {
 	case 1:
-		c=Math.sin((x + Math.PI) / 180.0);
+		c=Math.sin((x * Math.PI) / 180.0 );
 		break;
 	case 2:
-		c=Math.cos((x + Math.PI) / 180.0);
+		c=Math.cos((x * Math.PI) / 180.0 );
 		break;
 	case 3:
-		c=Math.tan((x + Math.PI) / 180.0);
+		c=Math.tan((x * Math.PI) / 180.0 );
 		break;
 	case 4:
 		c=Math.log(x);
@@ -26,18 +25,18 @@ function calc(type) {
 		c=x*y;
 		break;
 	}
-	document.getElementById("output").value = c; 
+	document.getElementById("output").value = c;
 }
 
 function reset() {
-	document.getElementById("output").value = ""; 
+	document.getElementById("output").value = "";
 }
-
 </script>
+
 </head>
 <body>
-첫번째 값 : <input type="text" id="input1"><br>
-두번째 값 : <input type="text" id="input2"><br>
+첫번째 값 : <input type="text" id="input1">
+두번째 값 : <input type="text" id="input2">
 결과 : <input type="text" id="output">
 <p>
 <input type="button" id="sin" value="sin" onclick="calc(1)">

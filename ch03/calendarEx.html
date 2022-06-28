@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>calendarEx</title>
+<script type="text/javascript">
+var date=new Date();
+var y=date.getFullYear();//현재 년도
+var m=date.getMonth(); //월
+var d=date.getDate;//일
+
+var theDate=new Date(y, m, 1);
+var theDay=theDate.getDay();
+
+//1월1부터 12월까지 마지막 날짜를 배열로 저장
+var last=[31,28,31,30,31,30,31,31,30,31,30,31];
+//윤년(4년 주기이고 100년 주기는 제외, 또는 400녀 주기)일 경우 2월의 마지막 날짜는 29로 설정
+if(y%4 && y%100 != 0 || y%400 == 0){
+	lastDate=last[1]=29;//2월을 29일로 바꿈
+}
+lastDate=last[m];//현재 월의 마지막 날짜 계산
+
+var row=Math.ceil((theDay+lastDate)/7); //필요한 행수
+//달력연도/월 표기, 달력 테이블 생성
+document.write("<h1>"+y+"."+(m+1)+"</h1>");
+var calendar = "<table border='1'>";
+calendar += "<tr>";
+calendar += "<th>일</th>";
+calendar += "<th>월</th>";
+calendar += "<th>화</th>";
+calendar += "<th>수</th>";
+calendar += "<th>목</th>";
+calendar += "<th>금</th>";
+calendar += "<th>토</th>";
+calendar += "</tr>";
+var dNum=1;
+for(var i=1; i<=row; i++){//행 생성 (tr)
+	calendar += "<tr>";
+	for(var k=1; k<=7; k++){//열생성 (td)
+		//행이 첫 줄이고 현재 월의 첫날의 요일 이전은 모두 빈열로 표기, 날짜가 마지막 날짜보다 크면 빈열로 표기
+		if(i==1 && k<=theDay || dNum>lastDate){
+			calendar+="<td> &nbsp; </td>";
+		}else {calendar+="<td>"+dNum+"</td>"; dNum++}
+	}//inner for
+	calendar += "</tr>";
+}//outer for
+calendar += "</table>";
+
+//달력 테이블 출력
+document.write(calendar);
+</script>
+</head>
+<body>
+
+</body>
+</html>
