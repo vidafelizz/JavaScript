@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Summer Festival</title>
+<script type="text/javascript">
+window.open("news.html", "pop1", "width=400, height=350, left=300, top=10, scrollbars=no, toolbars=no, location=no")
+
+function check() {
+	var userid = document.form1.userid.value;
+	var pwd = document.form1.pwd.value;
+	if(userid=="") {
+		alert("아이디를 입력하세요.")
+		document.form1.userid.focus();
+		return;
+	}
+	if(pwd=="") {
+		alert("비밀번호를 입력하세요.")
+		document.form1.pwd.focus();
+		ruturn;
+	}
+	document.form1.submit();
+}
+</script>
+
+<style type="text/css">
+* {margin: 0px; padding: 5px 0px}
+
+a:link {
+	text-decoration: none; /* 밑줄제거*/
+	font-style: normal;
+	color: white;
+}
+
+a:hover {/* 마우스가 올라갈 때 */
+	text-decoration: underline;
+	color: red;
+}			
+
+header {
+ background: #0030E5;
+ color: white;
+}
+
+body {
+	font-size: 15px;
+	width: auto;
+	height: auto;
+	background: #CAF3FF;
+}
+
+#ex {
+	position: absolute;
+	width: 200px;
+	height: 50px;
+}
+
+#ex:hover .box {
+   -webkit-transform: rotate(720deg);
+
+	transform: rotate(720deg);
+	margin-left: 420px;
+}
+
+.box {
+	font-size: 14px;
+	position: relative;
+	width: 70px;
+	height: 70px;
+	margin-bottom: 10px;
+	background-color: yellow;
+	color: red;
+}
+
+.box p {
+	text-align: center;
+	color: red;
+}
+
+.box p:visited {
+  color: green;
+}
+
+#no-delay {
+  -webkit-transition-duration: 3s;
+  -moz-transition-duration: 3s; 
+  -o-transition-duration: 3s;
+
+  transition-duration: 3s;
+  border: 1px solid #CAF3FF;
+  border-radius: 5em;
+}	
+
+table {
+	width: 100%
+}
+
+div{
+ margin: 0px;
+ padding: 0px;
+}
+
+footer {
+background: #0030E5;
+ color: white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div align="center">
+ <header id="home">
+  <h1><a href="#home" style="color: white">2022 Summer Festival🎸</a></h1>
+ </header>
+</div>
+
+<section id="log">
+  <div id="ex">
+  <div id="no-delay" class="box">
+   <p><a href="event.html">🎈🎈🎈<br><strong>event</strong><br>🎁🎁🎁</a></p>
+   </div>
+ </div>
+
+ <div align="right">
+ <form name="form1" action="index_result.jsp">
+  아이디 : <input type="text" name="userid">
+  비밀번호 : <input type="password" name=pwd>
+  <input type="button" value="로그인" onclick="check()">
+</form>
+
+  <span><a href="#">아이디/비밀번호 찾기</a></span>&nbsp;
+  <span><a href="login.html">회원가입</a></span>
+ </div>
+</section>
+
+<div align="center" style="color: black">
+ <nav>
+  <table border="1">
+   <tr>
+    <th width="20%"><div class="ease"><a href="#">공연 소식</a></div></th>
+    <th width="20%"><div class="ease"><a href="ticket.html">티켓 예매/조회</a></div></th>
+    <th width="20%"><div class="ease"><a href="#">커뮤니티</a></div></th>
+    <th width="20%"><div class="ease"><a href="faq.html">FAQ</a></div></th>
+    <th width="20%"><div class="ease"><a href="#">마이페이지</a></div></th>
+    </tr>
+  </table> 
+ </nav>
+</div>
+
+<section id="section1">
+ <div align="center">
+  <table>
+  <marquee loop="infinite" style="font-size: 20px; background: red; color: yellow;" ><strong><em>Upcoming Festival&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upcoming Festival&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Upcoming Festival&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Upcoming Festival&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </em></strong></marquee>
+  <tr>
+   <td>
+    <h5 style="text-align: center">
+    <a href="https://pentaport.co.kr/" style="text-align: center" target="_blank">
+    <img alt="" src="https://cdn.imweb.me/upload/S20200106a105fd03f4b57/376a063498e9e.jpg" width="300" height="300"><br>
+    인천 펜타포트 락 페스티벌 2022</a></h5>
+   </td>
+   <td>
+    <h5 style="text-align: center">
+    <a href="http://waterbombfestival.com/" target="_blank">
+    <img alt="" src="http://waterbombfestival.com/wp-content/uploads/2022/05/wb2022_seoul_700px.jpg" width="300" height="300"><br>
+    워터밤 페스티벌 2022</a></h5>
+   </td>
+   <td>
+    <h5 style="text-align: center">
+    <a href="http://seouljazz.co.kr/" target="_blank">
+    <img alt="" src="http://seouljazz.co.kr/data/editor/2204/20220425134600_51717e96e37d1584ef300935c1936322_npb1.jpg" width="300" height="300"><br>
+    서울 재즈 페스티벌 2022</a></h5>
+   </td>
+  </table>
+ </div>
+</section>
+<br>
+
+<br>
+<hr>
+
+<div align="center">
+ <footer>
+  <h4>올 여름은 페스티벌과 함께해요!</h4><br>
+  <h5>Copyright &copy; 2022 So-ra Yoon All rights reserved.</h5>
+ </footer>
+</div>
+
+</body>
+</html>

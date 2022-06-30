@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FAQ</title>
+<script type="text/javascript">
+function check() {
+	var userid = document.form1.userid.value;
+	var pwd = document.form1.pwd.value;
+	if(userid=="") {
+		alert("아이디를 입력하세요.")
+		document.form1.userid.focus();
+		return;
+	}
+	if(pwd=="") {
+		alert("비밀번호를 입력하세요.")
+		document.form1.pwd.focus();
+		ruturn;
+	}
+	document.form1.submit();
+}
+</script>
+
+<style type="text/css">
+* {margin: 0px; padding: 5px 0px}
+
+a:link {
+	text-decoration: none; /* 밑줄제거*/
+	font-style: normal;
+	color: white;
+}
+
+a:hover {/* 마우스가 올라갈 때 */
+	text-decoration: underline;
+	color: red;
+}			
+
+header {
+ background: #0030E5;
+ color: white;
+}
+body {
+	font-size: 15px;
+	width: auto;
+	height: auto;
+	background: #CAF3FF;
+}
+
+table {
+	width: 100%;
+}
+
+nav {
+ width: 100%;
+ color: black;
+}
+
+div{
+ margin: 0px;
+ padding: 0px;
+}
+
+footer {
+background: #0030E5;
+ color: white;
+}
+
+/* faq 페이지*/
+
+ul {
+  display: table;
+  margin: auto;
+}
+
+ul.navi li, ul.ask li {
+  background: #0030E5;
+  color: white;
+  list-style-type: name;
+  display: block;
+  width: 8em;
+  float: left;
+  text-align: center;
+  font-family: "lucida Calligraphy Italic" Ariall; /* 첫번째 폰트가 없으면 두번째 폰트가 자동선택 */
+  border: 1px solid;
+}
+
+ul.navi li a,  ul.ask li a {
+  display: block;
+  padding: .8em .5em .5em .5em; /* 안쪽여백 */
+  text-decoration: none; /* 밑줄을 없애줌 */
+  color: white;
+}
+
+ul.navi li:hover,  ul.ask li:hover { background-color: #333333; }
+ul.navi li:hover>a, ul.ask li:hover>a { color: red; font-weight: bold; }
+
+ul.navi li:first-child, ul.ask li:first-child {
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+ul.navi li:last-child,  ul.ask li:last-child {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+
+
+</style>
+</head>
+<body>
+<div align="center">
+ <header id="home">
+  <h1><a href="index.html" style="color: white">2022 Summer Festival🎸</a></h1>
+ </header>
+</div>
+
+<section id="log">
+ <div align="right">
+ <form name="form1" action="index_result.jsp">
+  아이디 : <input type="text" name="userid">
+  비밀번호 : <input type="password" name=pwd>
+  <input type="button" value="로그인" onclick="check()">
+</form>
+
+  <span><a href="#">아이디/비밀번호 찾기</a></span>&nbsp;
+  <span><a href="login.html">회원가입</a></span>
+ </div>
+</section>
+
+<div align="center" style="color: black">
+ <nav>
+  <table border="1">
+  <thead>
+   <tr>
+    <th width="20%"><span><a href="#">공연 소식</a></span></th>
+    <th width="20%"><span><a href="ticket.html">티켓 예매/조회</a></span></th>
+    <th width="20%"><span><a href="#">커뮤니티</a></span></th>
+    <th width="20%"><span><a href="faq.html">FAQ</a></span></th>
+    <th width="20%"><span><a href="#">마이페이지</a></span></th>
+    </tr>
+    </thead>
+  </table> 
+ </nav>
+</div>
+
+
+<h2 style="text-align: center;">자주하는 질문</h2>
+<ul class="navi">
+ <li><a href="#">공지사항</a></li>
+ <li><a href="#">공연 문의</a></li>
+ <li><a href="#">주문/취소 문의</a></li>
+ <li><a href="#">배송 문의</a></li>
+ <li><a href="#">계정 문의</a></li>
+</ul>
+
+<form method="post" action="search_result.jsp">
+<div style="text-align: center;"><input type="text" name="search" placeholder="검색할 내용을 입력해주세요." size="80" style="text-align: center;">
+<input type="submit" value="검색"></div>
+</form>
+
+<hr>
+<br><br><br><br><br><br><br><br><br><br>
+<hr>
+
+<h2 style="text-align: center;">1대1 문의</h2>
+<ul class="ask">
+ <li><a href="#">문의 내역</a></li>
+ <li><a href="#">답변 보기</a></li>
+</ul>
+
+<br><br>
+<hr>
+
+<div align="center">
+ <footer>
+  <h4>올 여름은 페스티벌과 함께해요!</h4><br>
+  <h5>Copyright &copy; 2022 So-ra Yoon All rights reserved.</h5>
+ </footer>
+</div>
+
+</body>
+</html>

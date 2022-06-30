@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ticket_estimate</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 12px dotum, "돋움", gulim, "굴림", sans-serif;	
+}
+
+table {
+	border-collapse: collapse; /* 표테두리와 td(셀)사이의 간격을 없앰 */
+	border-spacing: 0; /* 테이블의 여백을 0 */
+}
+
+h1 {
+	text-align: center;
+}
+
+#Zone {
+	width: 600px;
+	margin: 0 auto;
+}
+
+#estimate {
+	width: 100%;
+}
+
+#estimate th, td {
+	border: 1px solid #ccc;
+	height: 30px;
+}
+
+#estimate th {
+	background-color: #333;
+	color: #fff;
+}
+
+#Zone td {
+	text-align: center;
+}
+
+tfoot {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+#total {
+	border: none 0;
+	background: none;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
+</style>
+
+<script type="text/javascript">
+function fest() {
+	// value : 사용자의 입력에 따라 변동되는 변수
+	// defaultValue : 기본값, 초기값을 저장하는 변수
+	var basic_ticket = Number(document.getElementById("total").defaultValue);
+	for(var i=1; i<=6; i++) {
+		var chkObj = document.getElementById("opt" + i); // id가 opt1,opt2,opt3
+		if(chkObj.checked) { // 체크 상태이면
+			basic_ticket += Number(chkObj.value);
+		}
+	}
+	document.getElementById("total").value = basic_ticket;
+}
+</script>
+
+</head>
+<body>
+ <h1><em style="color: red">인천펜타포트 락페스티벌</em> 티켓 예상 가격 <sub>(1매 기준)</sub></h1>
+ <div id="Zone">
+  <p>
+   <img src="festival.jpg" width=600 height="200">
+  </p>
+  <table id="estimate">
+  <!-- 컬럼(태그)을 그룹으로 관리, 행이 아니라 열 단위로 스타일 제어 가능 -->
+   <colgroup>
+    <col width="380px">
+    <col width="160px">
+    <col width="*">
+   </colgroup>
+  <thead>
+    <tr>
+     <th>기   간</th>
+     <th>가   격</th>
+     <th>선   택</th>
+    </tr>
+   </thead>  
+   <!-- 테이블 footer -->
+   <tfoot>
+    <tr>
+     <th>총   액</th>
+     <td colspan="2">
+      <input type="text" name="total" id="total" value="0" readonly="readonly">
+     </td>
+    </tr>
+   </tfoot>
+   <!-- 테이블 본문 -->
+   <tbody>
+    <tr>
+     <td rowspan="2"><label for="opt1">3일권(금/토/일)</label></td>
+     <td>200,000원</td>
+     <td>
+      <input type="checkbox" name="opt1" id="opt1" value="200000" onclick="fest()">
+     </td>
+    </tr>
+     <tr>
+     <td>(KB국민카드 결제15%)	170,000원</td>
+     <td>
+      <input type="checkbox" name="opt2" id="opt2" value="170000" onclick="fest()">
+     </td>
+    </tr>
+    <tr>
+     <td rowspan="2"><label for="opt3">2일권</label></td>
+     <td>150,000원</td>
+     <td>
+      <input type="checkbox" name="opt3" id="opt3" value="150000" onclick="fest()">
+     </td>
+    </tr>
+    <tr>
+     <td>(KB국민카드 결제15%)	127,500원</td>
+     <td>
+      <input type="checkbox" name="opt4" id="opt4" value="127500" onclick="fest()">
+     </td>
+    </tr>
+    <tr>
+     <td rowspan="2"><label for="opt5">1일권</label></td>
+     <td>금요일 80,000원</td>
+     <td>
+      <input type="checkbox" name="opt5" id="opt5" value="80000" onclick="fest()">
+     </td>
+    </tr>
+    <tr>
+     <td>토,일요일 120,000원</td>
+     <td>
+      <input type="checkbox" name="opt6" id="opt6" value="120000" onclick="fest()">
+     </td>
+    </tr>   
+   </tbody>
+  </table>
+ </div>
+</body>
+</html>

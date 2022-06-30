@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ticket</title>
+<script type="text/javascript">
+function check() { // 로그인
+	var userid = document.form1.userid.value;
+	var pwd = document.form1.pwd.value;
+	if(userid=="") {
+		alert("아이디를 입력하세요.")
+		document.form1.userid.focus();
+		return;
+	}
+	if(pwd=="") {
+		alert("비밀번호를 입력하세요.")
+		document.form1.pwd.focus();
+		ruturn;
+	}
+	document.form1.submit();
+}
+
+function checkDate() { // 예매조회
+	var s = document.getElementById("pdate").value;
+	document.write("구입한 날짜 : " + s + "<br>");
+	var pdate = new Date(s); // 특정한 날짜&시각 생성
+	var today = new Date();  // 시스템의 현재 날짜&시각
+
+	var diff = today.getTime() - pdate.getTime();
+	var days = Math.floor(diff / (1000*60*60*24));
+	if (days > 365) {
+		alert("1년 이내에만 조회 가능합니다.");
+	} else {
+		alert("조회 가능합니다.");
+	}
+}
+
+</script>
+
+<style type="text/css">
+* {margin: 0px; padding: 5px 0px}
+
+a:link {
+	text-decoration: none; /* 밑줄제거*/
+	font-style: normal;
+	color: white;
+}
+
+a:hover {/* 마우스가 올라갈 때 */
+	text-decoration: underline;
+	color: red;
+}			
+
+header {
+ background: #0030E5;
+ color: white;
+}
+body {
+	font-size: 15px;
+	width: auto;
+	height: auto;
+	background: #CAF3FF;
+}
+
+table {
+	width: 100%;
+}
+
+nav {
+ width: 100%;
+ color: black;
+}
+
+div{
+ margin: 0px;
+ padding: 0px;
+}
+
+footer {
+background: #0030E5;
+ color: white;
+}
+
+/* faq 페이지*/
+
+ul {
+  display: table;
+  margin: auto;
+}
+
+ul.navi li, ul.ask li {
+  background: #0030E5;
+  color: white;
+  list-style-type: name;
+  display: block;
+  width: 8em;
+  float: left;
+  text-align: center;
+  font-family: "lucida Calligraphy Italic" Ariall; /* 첫번째 폰트가 없으면 두번째 폰트가 자동선택 */
+  border: 1px solid;
+}
+
+ul.navi li a,  ul.ask li a {
+  display: block;
+  padding: .8em .5em .5em .5em; /* 안쪽여백 */
+  text-decoration: none; /* 밑줄을 없애줌 */
+  color: white;
+}
+
+ul.navi li:hover,  ul.ask li:hover { background-color: #333333; }
+ul.navi li:hover>a, ul.ask li:hover>a { color: red; font-weight: bold; }
+
+ul.navi li:first-child, ul.ask li:first-child {
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+ul.navi li:last-child,  ul.ask li:last-child {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+</style>
+</head>
+
+<body>
+
+
+
+<div align="center">
+ <header id="home">
+  <h1><a href="index.html" style="color: white">2022 Summer Festival🎸</a></h1>
+ </header>
+</div>
+
+<section id="log">
+ <div align="right">
+ <form name="form1" action="index_result.jsp">
+  아이디 : <input type="text" name="userid">
+  비밀번호 : <input type="password" name=pwd>
+  <input type="button" value="로그인" onclick="check()">
+</form>
+
+  <span><a href="#">아이디/비밀번호 찾기</a></span>&nbsp;
+  <span><a href="login.html">회원가입</a></span>
+ </div>
+</section>
+
+
+<div align="center" style="color: black">
+ <nav>
+  <table border="1">
+  <thead>
+   <tr>
+    <th width="20%"><span><a href="#">공연 소식</a></span></th>
+    <th width="20%"><span><a href="ticket.html">티켓 예매</a></span></th>
+    <th width="20%"><span><a href="#">커뮤니티</a></span></th>
+    <th width="20%"><span><a href="faq.html">FAQ</a></span></th>
+    <th width="20%"><span><a href="#">마이페이지</a></span></th>
+    </tr>
+    </thead>
+  </table> 
+ </nav>
+</div>
+
+
+<h2 style="text-align: center;">티켓 예매/조회</h2>
+<ul class="navi">
+<li><a href="ticket_estimate.html" target="_blank">티켓 가격 예상</a></li>
+ <li><a href="#">예매 하기</a></li>
+ <li>
+  <a href="#" target="_blank">예매 내역 조회 &nbsp;&nbsp;&nbsp;
+  </a>
+   <input type="date" id="pdate">
+   <button type="button" onclick="checkDate()">조회</button>
+ </li>
+</ul>
+
+<form method="post" action="search_result.jsp">
+<div style="text-align: center;"><input type="text" name="search" placeholder="검색할 내용을 입력해주세요." size="80" style="text-align: center;">
+<input type="submit" value="검색"></div>
+</form>
+
+
+<div align="center">
+ <footer>
+  <h4>올 여름은 페스티벌과 함께해요!</h4><br>
+  <h5>Copyright &copy; 2022 So-ra Yoon All rights reserved.</h5>
+ </footer>
+</div>
+
+</body>
+</html>
