@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>그라데이션</title>
+</head>
+<body onload="test()">
+<canvas id="myCanvas" width="300" height="200" style="border: 1px solid red;"></canvas>
+ <script type="text/javascript">
+ function test() {
+	var canvas = document.getElementById("myCanvas");
+	var context = canvas.getContext("2d");
+
+	var gradient = context.createLinearGradient(0, 0, 200, 0); // 선형 그라데이션
+	
+	gradient.addColorStop(0, "red"); // 시작색
+	gradient.addColorStop(0.4, "yellow");	
+	gradient.addColorStop(0.7, "green"); 
+	gradient.addColorStop(1, "blue"); // 끝색
+	
+	context.fillStyle = gradient; // gradient에 대한 페인트 설정
+	context.fillRect(10, 10, 180, 90);	
+ }
+
+</script>
+</body>
+</html>

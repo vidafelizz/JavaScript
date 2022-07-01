@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>highlight</title>
+</head>
+<body onload="test()">
+<canvas id="myCanvas" width="300" height="200" style="border: 1px solid red;"></canvas>
+ <script type="text/javascript">
+ function test() {
+	var canvas = document.getElementById("myCanvas");
+	var context = canvas.getContext("2d");
+	
+	context.arc(70, 50, 10, 0, 2.0*Math.PI, false); // 안쪽 원
+	context.arc(80, 60, 120, 0, 2.0*Math.PI, false); // 바깥쪽 원
+	context.stroke();
+	
+	var gradient = context.createRadialGradient(70,50,10,80,60,120);
+	gradient.addColorStop(0, "white"); // 시작색상
+	gradient.addColorStop(1, "red");   // 종료색상
+	context.fillStyle = gradient; // 그라디언트 색상효과 적용
+	context.fillRect(0, 0, 200, 200);  // 사각형
+}
+
+</script>
+</body>
+</html>

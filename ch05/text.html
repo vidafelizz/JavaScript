@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>text</title>
+</head>
+<body onload="test()">
+<canvas id="myCanvas" width="300" height="200" style="border: 1px solid red;"></canvas>
+ <script type="text/javascript">
+ function test() {
+	var canvas = document.getElementById("myCanvas");
+	var context = canvas.getContext("2d");
+
+	// 폰트
+	context.font = "italic 40pt Arial";
+	context.strokeStyle = "blue";
+	context.strokeText("Hello World", 10, 100);
+}
+
+</script>
+</body>
+</html>
